@@ -16,7 +16,7 @@
 		</thead>
 		<tbody>
 			<?php $no=1; ?>
-			<?php $ambil=$conn->query("SELECT * FROM produk JOIN warung ON produk.id_warung=warung.id_warung"); ?>
+			<?php $ambil=$conn->query("SELECT * FROM produk"); ?>
 			<?php while ($data=$ambil->fetch_assoc()) {
 				?>
 				<tr>
@@ -25,7 +25,7 @@
 					<td><?php echo $data['nama_produk']; ?></td>
 					<td>Rp.<?php echo number_format($data['harga_produk']); ?></td>
 					<td><?php echo $data['stok']; ?></td>
-					<td><img src="../foto_produk/<?php echo $data['foto_produk']; ?>" width="80" height="80" style="border-radius: 10px;"></td>
+					<td><img src="../foto_produk/<?php echo $data['foto_produk']; ?>" width="80px" height="80px" style="border-radius: 10px;"></td>
 					<td>
 						<a href="index.php?halaman=hapusproduk&id=<?php echo $data['id_produk']; ?>" class="btn-danger btn">Hapus</a>
 						<a href="index.php?halaman=ubahproduk&id=<?php echo $data['id_produk']; ?>" class="btn btn-warning">Ubah</a>

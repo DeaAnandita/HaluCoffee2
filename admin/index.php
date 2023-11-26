@@ -24,7 +24,7 @@
    <link href="../asset/css/owl.carousel.css" rel="stylesheet">
    <link href="../asset/css/owl.theme.css" rel="stylesheet">
 
-   <link rel="shortcut icon" href="../logo.png">
+   <link rel="shortcut icon" href="../logo1.png">
 </head>
 <body>
     <div id="wrapper">
@@ -47,7 +47,7 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="logo.png" class="user-image img-responsive"/>
+                    <img src="../logo1.png" class="user-image img-responsive"/>
 					</li>
 
                     <li><a href="index.php"><i class="fa fa-home fa-3x"></i> Home</a></li>

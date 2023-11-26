@@ -4,11 +4,11 @@ include 'koneksi.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login E-DEL</title>
+	<title>Login Halu Coffee</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="logo.png"/>
+	<link rel="icon" type="image/png" href="logo2.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="asset/login/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -80,7 +80,7 @@ include 'koneksi.php';
 						}else if($data['role']=="staff"){
 							$_SESSION['username'] = $username;
 							$_SESSION['role'] = "staff";
-							header("location:/halucoffee2/admin/login.php");
+							header("location:\halucoffee2\admin\index.php");
 					}else{
 						echo"Database User Kosong";
 					}

@@ -1,3 +1,24 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+}
+
+
 a,
 button {
   -webkit-transition: all 0.2s ease-out;
@@ -852,7 +873,7 @@ h1 {
   font-size: 12px;
 }
 #content #blog-post .comment .reply {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: Poppins-Regular;
 }
 #content #blog-post .comment.last {
   margin-bottom: 0;
@@ -1080,7 +1101,7 @@ h1 {
 }
 /* navbar */
 .navbar {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family:Poppins-Regular;
   min-height: 70px;
   margin-bottom: 30px;
   border: none;
@@ -1331,7 +1352,7 @@ h1 {
 }
 /* scaffolding */
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: Poppins-Regular;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -1383,7 +1404,7 @@ hr {
 /* buttons  */
 .btn {
   font-weight: normal;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: Poppins-Regular;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -1469,7 +1490,7 @@ label {
   border-top: solid 1px #eeeeee;
   padding-top: 20px;
   text-transform: uppercase;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: Poppins-Regular;
 }
 .pager li {
   display: inline;
@@ -1497,7 +1518,7 @@ label {
 /* pagination */
 .pagination {
   margin: 20px 0;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: Poppins-Regular;
   border-radius: 0;
 }
 .pagination > li > a,
@@ -1572,7 +1593,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: Poppins-Regular;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;

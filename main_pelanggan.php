@@ -8,7 +8,7 @@ include 'koneksi.php';
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="logo.png"/>
+	<link rel="icon" type="image/png" href="logo2.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="asset/login/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -63,11 +63,24 @@ include 'koneksi.php';
 					$nama_pelanggan = mysqli_escape_string($conn,$_POST['nama_pelanggan']);
 					$no_meja = mysqli_escape_string($conn,$_POST['no_meja']);
 
-					$q = mysqli_query($conn, "INSERT INTO pelanggan (nama_pelanggan, no_meja) VALUES ('$nama_pelanggan', '$no_meja')");
-					
-                    header("location:all-menu.php");
+					$query=$conn->query("INSERT INTO pelanggan (nama_pelanggan, no_meja) VALUES ('$nama_pelanggan', '$no_meja')");
+					$result=$query;
+					if ($result==1) {
+						session_start();
+						$_SESSION['pelanggan']=$query;
+						echo "<br>";
+						echo "<div class='alert alert-info'><center>Succeeded</center></div>";
+						echo "<meta http-equiv='refresh' content='1;url=all-menu.php'>";
+					}
+					else{
+						echo "<br>";
+						echo "<div class='alert alert-danger'><center>Gagal</center></div>";
+						echo "<meta http-equiv='refresh' content='1;url=main_pelanggan.php'>";
+					}
 				}
 				?>
+
+				
 			</div>
 		</div>
 	</div>

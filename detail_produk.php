@@ -5,28 +5,28 @@ include 'protect.php';
 $id_produk=$_GET['id'];
 $query=$conn->query("SELECT * FROM produk JOIN warung ON produk.id_warung=warung.id_warung WHERE id_produk='$id_produk'");
 $data=$query->fetch_assoc();
-$id_pelanggan=$_SESSION['login']['id_pelanggan'];
+//$id_pelanggan=$_SESSION['pelanggan']['id_pelanggan'];
 error_reporting(0);
 
-if (isset($_POST['liked'])) {
-    $postid = $_POST['postid'];
-    $hasil = $conn->query("SELECT * FROM produk WHERE id_produk=$postid");
-    $baris = $hasil->fetch_assoc();
-    $n = $baris['likes'];
+// if (isset($_POST['liked'])) {
+//     $postid = $_POST['postid'];
+//     $hasil = $conn->query("SELECT * FROM produk WHERE id_produk=$postid");
+//     $baris = $hasil->fetch_assoc();
+//     // $n = $baris['likes'];
 
-    $conn->query("UPDATE produk SET likes=$n+1 WHERE id_produk=$postid");
-    $conn->query("INSERT INTO likes(id_pelanggan, id_produk) VALUES($id_pelanggan, $postid)");
-    exit();
-}
-if (isset($_POST['unliked'])) {
-    $postid = $_POST['postid'];
-    $hasil = $conn->query("SELECT * FROM produk WHERE id_produk=$postid");
-    $baris = $hasil->fetch_assoc();
-    $n = $baris['likes'];
+//     // $conn->query("UPDATE produk SET likes=$n+1 WHERE id_produk=$postid");
+//     $conn->query("INSERT INTO likes(id_pelanggan, id_produk) VALUES($id_pelanggan, $postid)");
+//     exit();
+// }
+// if (isset($_POST['unliked'])) {
+//     $postid = $_POST['postid'];
+//     $hasil = $conn->query("SELECT * FROM produk WHERE id_produk=$postid");
+//     $baris = $hasil->fetch_assoc();
+//     $n = $baris['likes'];
 
-    $conn->query("UPDATE produk SET likes=$n-1 WHERE id_produk=$postid");
-    $conn->query("DELETE FROM likes WHERE id_produk=$postid AND id_pelanggan=$id_pelanggan");
-}
+//     $conn->query("UPDATE produk SET likes=$n-1 WHERE id_produk=$postid");
+//     $conn->query("DELETE FROM likes WHERE id_produk=$postid AND id_pelanggan=$id_pelanggan");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,12 +40,12 @@ if (isset($_POST['unliked'])) {
     <meta name="keywords" content="">
 
     <title>
-        E-Del : Information Delivery Order Tel-U
+        Detail Produk
     </title>
 
     <meta name="keywords" content="">
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
     <link href="asset/css/font-awesome.css" rel="stylesheet">
@@ -62,7 +62,7 @@ if (isset($_POST['unliked'])) {
 
     <script src="asset/js/respond.min.js"></script>
 
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="logo2.png">
 
 
 
@@ -94,8 +94,8 @@ if (isset($_POST['unliked'])) {
             <div class="navbar-header">
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                    <img src="logo.png" class="hidden-xs">
-                    <img src="logo.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                    <img src="logo2.png" class="hidden-xs">
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">

@@ -2,7 +2,6 @@
 session_start();
 include 'protect.php';
 include 'koneksi.php';
-$id=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,7 @@ $id=$_GET['id'];
     <meta name="keywords" content="">
 
     <title>
-        E-Del : Information Delivery Order Tel-U
+        Nota
     </title>
 
     <meta name="keywords" content="">
@@ -38,7 +37,7 @@ $id=$_GET['id'];
 
     <script src="asset/js/respond.min.js"></script>
 
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="logo2.png">
 
     <style>
         #content{
@@ -72,24 +71,25 @@ $id=$_GET['id'];
             $("#printbtn").click(function(){
                 alert('Button DiKlik!');
         });   
+    })
     </script>
 </head>
 
 <body>
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
- <div id="top">
+ <!-- <div id="top">
     <div class="container">
         <div class="col-md-6" data-animate="fadeInDown">
             <ul class="menu">
-                <li><a href="profile.php">Welcome, <?php echo $_SESSION['login']['nama_pelanggan']; ?></a>
+                <li><a href="profile.php">Welcome, <?php echo $_SESSION['pelanggan']['nama_pelanggan']; ?></a>
                 </li>
                 <li><a href="logout.php">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
-</div>
+</div> -->
 
     <!-- *** TOP BAR END *** -->
 
@@ -101,8 +101,8 @@ $id=$_GET['id'];
         <div class="navbar-header">
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                    <img src="logo.png" class="hidden-xs">
-                    <img src="logo.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                    <img src="logo2.png" class="hidden-xs">
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -119,13 +119,9 @@ $id=$_GET['id'];
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="index.php">Home</a>
-                    </li>
                     <li> <a href="all-menu.php">Menu</a>
                     </li>
-                    <li> <a href="warung.php">Patners</a>
-                    </li>
-                    <li> <a href="contact.php">Contact Us</a>
+                    <li> <a href="warung.php">Detail</a>
                     </li>
                 </ul>
 
@@ -173,7 +169,6 @@ $id=$_GET['id'];
                                     <tr>
                                         <th>No</th>
                                         <th>Menu</th>
-                                        <th>Info Warung</th>
                                         <th>Harga</th>
                                         <th>Jumlah</th>
                                         <th>Subtotal</th>
@@ -193,7 +188,6 @@ $id=$_GET['id'];
                                         <tr>
                                             <td><?php echo $no++; ?></td>
                                             <td><?php echo $data['nama_produk']; ?></td>
-                                            <td><?php echo $data['nama_warung']; ?> (<?php echo $data['telepon_warung']; ?>)</td>
                                             <td>Rp.<?php echo number_format($data['harga_produk']); ?></td>
                                             <td><?php echo $data['jumlah'] ?></td>
                                             <td>Rp.<?php echo number_format($data['harga_produk']*$data['jumlah']); ?></td>
@@ -230,19 +224,17 @@ $id=$_GET['id'];
                                 </p>
                             </div>
                             <div class="col-sm-4">
-                                <h3><i class="fa fa-user"></i> Pelanggan</h3>
-                                <p><strong><?php echo $_SESSION['login']['nama_pelanggan']; ?></strong><br>
-                                    <?php echo $_SESSION['login']['telepon_pelanggan']; ?><br>
-                                    <?php echo $_SESSION['login']['email_pelanggan']; ?>
+                                <h3><i class="fa fa-user"></i> Nama </h3>
+                                <p><strong><?php echo $_SESSION['pelanggan']['nama_pelanggan']; ?></strong><br>
                                 </p>
                             </div>
                             <!-- /.col-sm-4 -->
-                            <div class="col-sm-4">
+                            <!-- <div class="col-sm-4">
                                 <h3><i class="fa fa-road"></i> Pengiriman</h3>
-                                <p><b> <?php echo $_SESSION['login']['alamat_pelanggan']; ?></b>
+                                <p><b> <?php echo $_SESSION['pelanggan']['alamat_pelanggan']; ?></b>
                                     <br>Ongkos Kirim : Rp.<?php echo $data2['ongkir']; ?>
                                 </p>
-                            </div>
+                            </div> -->
                             <!-- /.col-sm-4 -->
                         </div>
                         <!-- /.row -->
@@ -259,10 +251,10 @@ $id=$_GET['id'];
  <div id="copyright">
     <div class="container">
         <div class="col-md-6">
-            <p class="pull-left">© E-DEL 2018</p>
+            <p class="pull-left">© Kelompok 6</p>
         </div>
         <div class="col-md-6">
-            <p class="pull-right">Alright Reserved by 11Fingers
+            <p class="pull-right">Alright Reserved
             </p>
         </div>
     </div>
@@ -281,5 +273,6 @@ $id=$_GET['id'];
  <script src="asset/js/bootstrap-hover-dropdown.js"></script>
  <script src="asset/js/owl.carousel.min.js"></script>
  <script src="asset/js/front.js"></script>
+
 </body>
 </html>

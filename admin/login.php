@@ -8,7 +8,7 @@ include '../koneksi.php';
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="../logo.png"/>
+	<link rel="icon" type="image/png" href="../logo1.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../asset/login/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -40,7 +40,7 @@ include '../koneksi.php';
 						E-DEL : Login Admin
 					</span>
 					<div class="wrap-input100 validate-input" data-validate = "Insert Username">
-						<input class="input100" type="text" name="username">
+						<input class="input100" type="text" name="nama">
 						<span class="focus-input100" data-placeholder="Insert Your Username"></span>
 					</div>
 
@@ -48,7 +48,7 @@ include '../koneksi.php';
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="password">
+						<input class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Insert Your Password"></span>
 					</div>
 
@@ -73,10 +73,10 @@ include '../koneksi.php';
 				</form>
 				<?php 
 				if (isset($_POST['submit'])) {
-					$username = mysqli_escape_string($conn,$_POST['username']);
-					$password = mysqli_escape_string($conn,$_POST['password']);
+					$nama = mysqli_escape_string($conn,$_POST['nama']);
+					$pass = mysqli_escape_string($conn,$_POST['pass']);
 
-					$query=$conn->query("SELECT * FROM admin WHERE username='$_POST[username]' AND password='$password'");
+					$query=$conn->query("SELECT * FROM admin WHERE nama='$_POST[nama]' AND pass='$pass'");
 					$result=$query->num_rows;
 					if ($result==1) {
 						session_start();

@@ -7,8 +7,7 @@
 			<tr>
 				<th>No</th>
 				<th>Nama</th>
-				<th>Email</th>
-				<th>Telepon</th>
+				<th>No Meja</th>
 				<th>Aksi</th>
 			</tr>
 		</thead>
@@ -20,8 +19,7 @@
 				<tr>
 					<td><?php echo $no++; ?></td>
 					<td><?php echo $data['nama_pelanggan']; ?></td>
-					<td><?php echo $data['email_pelanggan']; ?></td>
-					<td><?php echo $data['telepon_pelanggan']; ?></td>
+					<td><?php echo $data['no_meja']; ?></td>
 					<td>
 						<a href="index.php?halaman=hapuspelanggan&id=<?php echo $data['id_pelanggan']; ?>" class="btn btn-danger">Hapus</a>
 					</td>

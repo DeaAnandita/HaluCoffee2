@@ -18,12 +18,12 @@
     <meta name="keywords" content="">
 
     <title>
-        E-Del : Information Delivery Order Tel-U
+        Cek Pesanan
     </title>
 
     <meta name="keywords" content="">
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
     <link href="asset/css/font-awesome.css" rel="stylesheet">
@@ -40,25 +40,25 @@
 
     <script src="asset/js/respond.min.js"></script>
 
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="logo2.png">
 
 </head>
 
 <body>
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
- <div id="top">
+ <!-- <div id="top">
     <div class="container">
         <div class="col-md-6" data-animate="fadeInDown">
             <ul class="menu">
-                <li><a href="profile.php">Welcome, <?php echo $_SESSION['login']['nama_pelanggan']; ?></a>
+                <li><a href="profile.php">Welcome, <?php echo $_SESSION['pelanggan']['nama_pelanggan']; ?></a>
                 </li>
                 <li><a href="logout.php">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
-</div>
+</div> -->
 
     <!-- *** TOP BAR END *** -->
 
@@ -70,8 +70,8 @@
         <div class="navbar-header">
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                    <img src="logo.png" class="hidden-xs">
-                    <img src="logo.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                    <img src="logo2.png" class="hidden-xs">
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only"> go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -88,13 +88,10 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="index.php">Home</a>
-                    </li>
                     <li> <a href="all-menu.php">Menu</a>
                     </li>
-                    <li> <a href="warung.php">Patners</a>
+                    <li> <a href="warung.php">Detail</a>
                     </li>
-                    <li> <a href="contact.php">Contact Us</a>
                     </li>
                 </ul>
 
@@ -139,9 +136,9 @@
 
                 <div class="col-md-13" id="customer-order">
                     <div class="box">
-                        <h1>Detail Pembelian : </h1>
+                        <h1>Detail Pesanan : </h1>
 
-                        <p class="lead">Berikut rincian pembelian anda  </p>
+                        <p class="a">Berikut rincian pembelian anda..  </p>
 
                         <div class="table-responsive">
                             <table class="table">
@@ -166,8 +163,7 @@
                                         $subharga=$data['harga_produk']*$jumlah;
                                         $total = $total+$subharga;
                                         $total_jumlah=count($_SESSION['keranjang']);
-                                        $ongkir=1000*$total_jumlah;
-                                        $bayar=$total+$ongkir;                                        
+                                        $bayar=$total;                                        
                                     ?>
                                     <tr>
                                         <td>
@@ -184,16 +180,7 @@
                                     <?php endforeach ?>
                                 </tbody>
                                 <tfoot>
-                                    <tr>
-                                        <th colspan="5" class="text-right">Total Pembelian</th>
-                                        <th>Rp.<?php echo number_format($total); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="5" class="text-right">Ongkos Kirim</th>
-                                        <th>Rp.<?php echo $ongkir; ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="5" class="text-right"><b>Total</b></th>
+                                        <th colspan="5" class="text-right"><b>Total Pesanan</b></th>
                                         <th><b>Rp.<?php echo number_format($bayar); ?></b></th>
                                     </tr>
                                 </tfoot>
@@ -214,10 +201,10 @@
                         </form>
                         <?php 
                             if (isset($_POST['submit'])) {
-                                $id_pelanggan = $_SESSION['login']['id_pelanggan'];
+                                $id_pelanggan = $_SESSION['pelanggan']['id_pelanggan'];
                                 $tanggal_pembelian = date('Y-m-d');
                                 //Simpan data pembelian ke tabel pembelian
-                                $conn->query("INSERT INTO pembelian VALUES ('','$tanggal_pembelian','$total','$ongkir','$bayar','$id_pelanggan')");
+                                $conn->query("INSERT INTO pembelian VALUES ('','$tanggal_pembelian','$total','$bayar','$id_pelanggan')");
 
                                 //get id_pembelian barusan
                                 $id_pembelian_barusan = $conn->insert_id;
@@ -234,6 +221,11 @@
                                 echo "<script>alert('Pembelian Sukses')</script>";
                                 echo "<script>location='nota.php?id=$id_pembelian_barusan'</script>";
 
+                            }else{
+                                echo "<script>alert('gagal')</script>";
+                                ini_set('display_errors', 1);
+                                ini_set('display_startup_errors', 1);
+                                error_reporting(E_ALL);
                             }
                         ?>
                     </div>
@@ -249,10 +241,10 @@
  <div id="copyright">
     <div class="container">
         <div class="col-md-6">
-            <p class="pull-left">© E-DEL 2018</p>
+            <p class="pull-left">© Kelompok 6</p>
         </div>
         <div class="col-md-6">
-            <p class="pull-right">Alright Reserved by 11Fingers
+            <p class="pull-right">Alright Reserved
             </p>
         </div>
     </div>

@@ -27,7 +27,7 @@ include 'koneksi.php';
     <!-- your stylesheet with modifications -->
     <link href="asset/css/custom.css" rel="stylesheet">
     <script src="asset/js/respond.min.js"></script>
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="logo2.png">
     <style>
 
     #copyright {
@@ -73,8 +73,8 @@ include 'koneksi.php';
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                        <img src="logo.png" class="hidden-xs">
-                        <img src="logo.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                        <img src="logo2.png" class="hidden-xs">
+                        <img src="logo2.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
                     </a>
                     <div class="navbar-buttons">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">

@@ -1,6 +1,6 @@
 <?php 
-    if (!isset($_SESSION['main_pelanggan'])) {
-        echo "<script>location='.php';</script>";
+    if (!isset($_SESSION['login'])) {
+        echo "<script>location='index.php';</script>";
         exit();
     }
 ?>

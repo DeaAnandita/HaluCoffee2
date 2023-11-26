@@ -37,8 +37,8 @@
 	$harga = $_POST['harga'];
 	$stok = $_POST['stok'];
 	$deskripsi = $_POST['deskripsi'];
-	$conn->query("INSERT INTO produk(kategori,nama_produk,harga_produk,stok,foto_produk,deskripsi_produk,id_warung) 
-		VALUES ('$kategori','$nama','$harga','$stok','$namafoto','$deskripsi','$idwarung')");
+	$conn->query("INSERT INTO produk(kategori,nama_produk,harga_produk,stok,foto_produk,deskripsi_produk) 
+		VALUES ('$kategori','$nama','$harga','$stok','$namafoto','$deskripsi')");
 	echo "<div class='alert alert-info'>Data Tersimpan</div>";
 	echo "<meta http-equiv='refresh' content='1;url=index.php?halaman=produk'>";
 }?>

@@ -16,7 +16,7 @@
     <meta name="keywords" content="">
 
     <title>
-        E-Del : Information Delivery Order Tel-U
+        Kategori
     </title>
 
     <meta name="keywords" content="">
@@ -38,7 +38,7 @@
 
     <script src="asset/js/respond.min.js"></script>
 
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="logo2.png">
 
 
 
@@ -47,7 +47,7 @@
 <body>
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
-    <div id="top">
+    <!-- <div id="top">
         <div class="container">
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
@@ -58,7 +58,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- *** TOP BAR END *** -->
 
     <!-- *** NAVBAR ***
@@ -69,8 +69,8 @@
             <div class="navbar-header">
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                    <img src="logo.png" class="hidden-xs">
-                    <img src="logo.png" class="visible-xs"><span class="sr-only">Halu Coffee - go to homepage</span>
+                    <img src="logo2.png" class="hidden-xs">
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only">Halu Coffee - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">

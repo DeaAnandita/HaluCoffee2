@@ -1,6 +1,7 @@
 <?php
     session_start(); 
     include 'koneksi.php';
+    include 'protect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +15,12 @@
     <meta name="keywords" content="">
 
     <title>
-        E-Del : Information Delivery Order Tel-U
+        Halu Coffee
     </title>
 
     <meta name="keywords" content="">
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Poppins:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
     <link href="asset/css/font-awesome.css" rel="stylesheet">
@@ -36,7 +37,7 @@
 
     <script src="asset/js/respond.min.js"></script>
 
-    <link rel="shortcut icon" href="logo.png">
+    <link rel="shortcut icon" href="logo2.png">
     
     <script src="asset/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
@@ -72,18 +73,18 @@
 <body>
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
- <div id="top">
+ <!-- <div id="top">
     <div class="container">
         <div class="col-md-6" data-animate="fadeInDown">
             <ul class="menu">
-                <li><a href="profile.php">Welcome, <?php echo $_SESSION['submit']['nama_pelanggan']; ?></a>
+                <li><a href="profile.php">Welcome, <?php echo $_SESSION['pelanggan']['nama_pelanggan']; ?></a>
                 </li>
                 <li><a href="logout.php">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
-</div>
+</div> -->
 
     <!-- *** TOP BAR END *** -->
 
@@ -94,9 +95,9 @@
     <div class="container">
         <div class="navbar-header">
 
-               <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                    <img src="logo.png" class="hidden-xs">
-                    <img src="logo.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+               <a class="navbar-brand home" href="all-menu.php" data-animate-hover="bounce">
+                    <img src="logo2.png" class="hidden-xs">
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only"></span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
