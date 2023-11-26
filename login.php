@@ -80,7 +80,7 @@ include 'koneksi.php';
 						}else if($data['role']=="staff"){
 							$_SESSION['username'] = $username;
 							$_SESSION['role'] = "staff";
-							header("location:/edel/admin/login.php");
+							header("location:/halucoffee2/admin/login.php");
 					}else{
 						echo"Database User Kosong";
 					}
