@@ -19,7 +19,7 @@ if (!$_SESSION['keranjang']) {
     <meta name="keywords" content="">
 
     <title>
-        E-Del : Information Delivery Order Tel-U
+        Halu Coffee
     </title>
 
     <meta name="keywords" content="">
@@ -54,8 +54,8 @@ if (!$_SESSION['keranjang']) {
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: #333;
-        color: #ccc;
+        background-color: #E0CCB9;
+        color: #fff;
         font-size: 12px;
         text-align: center;
         }
@@ -79,7 +79,7 @@ if (!$_SESSION['keranjang']) {
     <div class="container">
         <div class="col-md-6" data-animate="fadeInDown">
             <ul class="menu">
-                <li><a href="profile.php">Welcome, <?php echo $_SESSION['login']['nama_pelanggan']; ?></a>
+                <li><a href="profile.php">Welcome, <?php echo $_SESSION['pelanggan']['nama_pelanggan']; ?></a>
                 </li>
                 <li><a href="logout.php">Logout</a>
                 </li>
@@ -99,7 +99,7 @@ if (!$_SESSION['keranjang']) {
 
                <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
                     <img src="logo2.png" class="hidden-xs" >
-                    <img src="logo2.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only">Halu Coffee - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -110,6 +110,7 @@ if (!$_SESSION['keranjang']) {
                         <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs"> Keranjang Belanja </span>
                     </a>
                 </div>
+                
             </div>
             <!--/.navbar-header -->
 
@@ -246,10 +247,10 @@ if (!$_SESSION['keranjang']) {
  <div id="copyright">
     <div class="container">
         <div class="col-md-6">
-            <p class="pull-left">© E-DEL 2018</p>
+            <p class="pull-left">© Kelompok 6</p>
         </div>
         <div class="col-md-6">
-            <p class="pull-right">Alright Reserved by 11Fingers
+            <p class="pull-right">Alright Reserved
             </p>
         </div>
     </div>

@@ -71,6 +71,20 @@
 </head>
 
 <body>
+<style>
+#copyright {
+        position: fixed;
+        /*padding: 10px 0;*/
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #E0CCB9;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        }
+
+        </style>
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
  <!-- <div id="top">
@@ -108,6 +122,7 @@
                         <span class="sr-only">Toggle search</span>
                         <i class="fa fa-search"></i>
                     </button>
+
                     <a class="btn btn-default navbar-toggle" href="cart.php">
                         <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">Keranjang Belanja</span>
                     </a>
@@ -266,10 +281,10 @@
  <div id="copyright">
     <div class="container">
         <div class="col-md-6">
-            <p class="pull-left">© E-DEL 2018</p>
+            <p class="pull-left">© Kelompok 6</p>
         </div>
         <div class="col-md-6">
-            <p class="pull-right">Alright Reserved by 11Fingers
+            <p class="pull-right">Alright Reserved
             </p>
         </div>
     </div>

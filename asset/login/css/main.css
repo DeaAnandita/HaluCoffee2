@@ -150,7 +150,7 @@ iframe {
 .txt2 {
   font-family: Poppins-Regular;
   font-size: 13px;
-  color: #333333;
+  color: #333;
   line-height: 1.5;
 }
 
@@ -203,7 +203,7 @@ iframe {
   display: block;
   font-family: Poppins-Bold;
   font-size: 30px;
-  color: #333333;
+  color: #333;
   line-height: 1.2;
   text-align: center;
 }

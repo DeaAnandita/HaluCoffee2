@@ -14,7 +14,7 @@ include 'protect.php';
     <meta name="keywords" content="">
 
     <title>
-        E-Del : Information Delivery Order Tel-U
+    Halu Coffee
     </title>
 
     <meta name="keywords" content="">
@@ -68,7 +68,7 @@ include 'protect.php';
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
                     <img src="logo2.png" class="hidden-xs">
-                    <img src="logo2.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only">Halu Coffee - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">

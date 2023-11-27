@@ -136,9 +136,9 @@
 
                 <div class="col-md-13" id="customer-order">
                     <div class="box">
-                        <h1>Detail Pesanan : </h1>
+                        <h1>Detail Pembelian : </h1>
 
-                        <p class="a">Berikut rincian pembelian anda..  </p>
+                        <p class="lead">Berikut rincian pembelian anda  </p>
 
                         <div class="table-responsive">
                             <table class="table">
@@ -163,7 +163,7 @@
                                         $subharga=$data['harga_produk']*$jumlah;
                                         $total = $total+$subharga;
                                         $total_jumlah=count($_SESSION['keranjang']);
-                                        $bayar=$total;                                        
+                                        $bayar=$total+$ongkir;                                        
                                     ?>
                                     <tr>
                                         <td>
@@ -180,7 +180,8 @@
                                     <?php endforeach ?>
                                 </tbody>
                                 <tfoot>
-                                        <th colspan="5" class="text-right"><b>Total Pesanan</b></th>
+                                    <tr>
+                                        <th colspan="5" class="text-right"><b>Total</b></th>
                                         <th><b>Rp.<?php echo number_format($bayar); ?></b></th>
                                     </tr>
                                 </tfoot>
@@ -194,38 +195,38 @@
                         <form method="POST">
                             <div class="box-footer">
                                 <div class="pull-right">
-                                    <!-- <button class="btn btn-default"><i class="fa fa-refresh"></i> Update Cart</button> -->
-                                    <button type="submit" class="btn btn-primary" name="submit">Checkout<i class="fa fa-chevron-right"></i></button>
+                                    <!-- <input type="hidden" name="total" value="<?=$total?>">
+                                    <input type="hidden" name="bayar" value="<?=$total?>">
+                                    <input type="hidden" name="id" value="<?=$id_pelanggan?>">
+                                     -->
+                                    <button type="submit" class="btn btn-primary" name="submit_co">Checkout<i class="fa fa-chevron-right"></i></button>
                                 </div>
                             </div>
                         </form>
                         <?php 
-                            if (isset($_POST['submit'])) {
+                            if (isset($_POST['submit_co'])) {
+                                // var_dump($_POST);
                                 $id_pelanggan = $_SESSION['pelanggan']['id_pelanggan'];
                                 $tanggal_pembelian = date('Y-m-d');
                                 //Simpan data pembelian ke tabel pembelian
-                                $conn->query("INSERT INTO pembelian VALUES ('','$tanggal_pembelian','$total','$bayar','$id_pelanggan')");
+                                $conn->query("INSERT( INTO pembelian (`id_pembelian`, `tanggal_pembelian`, `jumlah_pembelian`, `total_pembelian`, `id_pelanggan`) VALUES ('','$tanggal_pembelian','$total','$bayar','$id_pelanggan')");
 
                                 //get id_pembelian barusan
-                                $id_pembelian_barusan = $conn->insert_id;
+                                $id_pembelian_produk = $conn-> insert_id;
                                 $stok=$data['stok'];
 
                                 foreach ($_SESSION['keranjang'] as $id_produk => $jumlah) {
                                     $stok_update = $stok-$jumlah;
-                                    $conn->query("INSERT INTO pembelian_produk VALUES ('','$jumlah','$id_pembelian_barusan','$id_produk')");
+                                    $conn->query("INSERT INTO pembelian_produk (`id_pembelian_produk`, `jumlah`, `id_pembelian`, `id_produk`) VALUES ('','$jumlah','$id_pembelian_produk','$id_produk','$id_pembelian')");
                                     $conn->query("UPDATE produk SET stok='$stok_update' WHERE id_produk=$id_produk");
                                 }
 
                                 unset($_SESSION['keranjang']);
 
                                 echo "<script>alert('Pembelian Sukses')</script>";
-                                echo "<script>location='nota.php?id=$id_pembelian_barusan'</script>";
-
+                                echo "<script>location='nota.php?id=$id_pembelian_produk'</script>";
                             }else{
                                 echo "<script>alert('gagal')</script>";
-                                ini_set('display_errors', 1);
-                                ini_set('display_startup_errors', 1);
-                                error_reporting(E_ALL);
                             }
                         ?>
                     </div>
@@ -235,6 +236,7 @@
             <!-- /.container -->
         </div>
         <!-- /#content -->
+
 
         <!-- *** COPYRIGHT ***
  _________________________________________________________ -->

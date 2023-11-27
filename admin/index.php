@@ -8,7 +8,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-Del : Admin</title>
+    <title>Halu Coffee : Admin</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -38,6 +38,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Halaman Staff</a> 
             </div>
+            
             <div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">
                 <a href="index.php?halaman=logout" class="btn btn-danger square-btn-adjust">Logout</a> 
             </div>

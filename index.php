@@ -67,7 +67,7 @@
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
                     <img src="logo2.png" class="hidden-xs">
-                    <img src="logo2.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only">Halu Coffee - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -244,7 +244,7 @@ _________________________________________________________ -->
 <div class="box text-center" data-animate="fadeInUp">
     <div class="container">
         <div class="col-md-12">
-            <h3 class="text-uppercase"> E-Del bekerja sama dengan banyak warung. </h3>
+            <h3 class="text-uppercase"> bekerja sama dengan banyak warung. </h3>
 
             <p class="lead">Penasaran dengan warung-warung kami? <a href="warung.php">Check our Store!</a>
             </p>
@@ -275,10 +275,10 @@ _________________________________________________________ -->
  <div id="copyright">
     <div class="container">
         <div class="col-md-6">
-            <p class="pull-left">© E-DEL 2018</p>
+            <p class="pull-left">© Kelompok 6</p>
         </div>
         <div class="col-md-6">
-            <p class="pull-right">Alright Reserved by 11Fingers
+            <p class="pull-right">Alright Reserved
             </p>
         </div>
     </div>

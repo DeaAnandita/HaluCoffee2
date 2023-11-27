@@ -4,7 +4,7 @@ include 'koneksi.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login E-DEL</title>
+	<title>Login Halu Coffee</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -40,12 +40,12 @@ include 'koneksi.php';
 						Halu Coffee
 					</span>
 					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="nama_pelanggan">
+						<input class="input100" type="text" name="nama_pelanggan" value="">
 						<span class="focus-input100" data-placeholder="Masukkan Nama"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" >
-						<input class="input100" type="number" name="no_meja">
+						<input class="input100" type="number" name="no_meja" value="">
 						<span class="focus-input100" data-placeholder="Masukkan No Meja"></span>
 					</div>
 
@@ -63,24 +63,22 @@ include 'koneksi.php';
 					$nama_pelanggan = mysqli_escape_string($conn,$_POST['nama_pelanggan']);
 					$no_meja = mysqli_escape_string($conn,$_POST['no_meja']);
 
-					$query=$conn->query("INSERT INTO pelanggan (nama_pelanggan, no_meja) VALUES ('$nama_pelanggan', '$no_meja')");
-					$result=$query;
+					$query=$conn->query("SELECT * FROM pelanggan WHERE nama_pelanggan='$nama_pelanggan' AND no_meja='$no_meja'");
+					$result=$query->num_rows;
 					if ($result==1) {
 						session_start();
-						$_SESSION['pelanggan']=$query;
+						$_SESSION['pelanggan']=$query->fetch_assoc();
 						echo "<br>";
-						echo "<div class='alert alert-info'><center>Succeeded</center></div>";
+						echo "<div class='alert alert-info'><center>Login Succeeded</center></div>";
 						echo "<meta http-equiv='refresh' content='1;url=all-menu.php'>";
 					}
 					else{
 						echo "<br>";
-						echo "<div class='alert alert-danger'><center>Gagal</center></div>";
+						echo "<div class='alert alert-danger'><center>Login Failed</center></div>";
 						echo "<meta http-equiv='refresh' content='1;url=main_pelanggan.php'>";
 					}
 				}
 				?>
-
-				
 			</div>
 		</div>
 	</div>

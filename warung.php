@@ -16,7 +16,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Kategori
+        Halu Coffee
     </title>
 
     <meta name="keywords" content="">
@@ -134,7 +134,7 @@
                     <!-- *** MENUS AND FILTERS ***-->
                     <div class="panel panel-default sidebar-menu">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Daftar Menu</h3>
+                            <h3 class="panel-title">Daftar Kategori</h3>
                         </div>
 
                         <div class="panel-body">

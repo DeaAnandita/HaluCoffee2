@@ -16,12 +16,12 @@
 		</thead>
 		<tbody>
 			<?php $no=1; ?>
-			<?php $ambil=$conn->query("SELECT * FROM produk"); ?>
+			<?php $ambil=$conn->query("SELECT * FROM produk JOIN warung ON produk.id_warung=warung.id_warung"); ?>
 			<?php while ($data=$ambil->fetch_assoc()) {
 				?>
 				<tr>
 					<td><?php echo $no++ ?></td>
-					<td><?php echo $data['kategori']; ?></td>
+					<td><?php echo $data['nama_warung']; ?></td>
 					<td><?php echo $data['nama_produk']; ?></td>
 					<td>Rp.<?php echo number_format($data['harga_produk']); ?></td>
 					<td><?php echo $data['stok']; ?></td>

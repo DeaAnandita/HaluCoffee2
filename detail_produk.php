@@ -75,7 +75,7 @@ error_reporting(0);
         <div class="container">
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
-                    <li><a href="profile.php">Welcome, <?php echo $_SESSION['login']['nama_pelanggan']; ?></a>
+                    <li><a href="profile.php">Welcome, <?php echo $_SESSION['pelanggan']['nama_pelanggan']; ?></a>
                     </li>
                     <li><a href="logout.php">Logout</a>
                     </li>
@@ -95,7 +95,7 @@ error_reporting(0);
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
                     <img src="logo2.png" class="hidden-xs">
-                    <img src="logo2.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only">Halu Coffee - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -216,12 +216,12 @@ error_reporting(0);
                         <div class="col-sm-6">
                             <div class="box">
                                 <h2 class="text-center"><?php echo $data['nama_produk']; ?> (<?php echo $data['nama_warung']; ?>)</h2>
-                                <p class="goToDescription"><a href="#details" class="scroll-to">Detail Menu</a>
+                                <p class="goToDescription"class="scroll-to"Detail> <?php echo $data['deskripsi_produk']; ?>
                                 </p>
                                 <p class="price">Stok : <?php echo $data['stok']; ?></p>
                                 <p class="price">Rp.<?php echo number_format($data['harga_produk']); ?></p>
                                 <form method="post">
-                                    <center><input type="number" min="1" name="jumlah" style="width: 50px; height: 28px;"></center><br>
+                                    <center><input type="number" min="1" name="jumlah" style="width: 70px; height: 28px;"></center><br>
                                     <center><button class="btn btn-primary" name="beli"><i class="fa fa-shopping-cart"></i>Add To Cart</button></center><br>
                                 </form>
                                 <?php 
@@ -261,8 +261,8 @@ error_reporting(0);
 
                     <div class="box" id="details">
                         <p>
-                            <h4>Detail Menu</h4>
-                            <!-- <p><?php echo $data['deskripsi_produk']; ?></p> -->
+                            <h4>Detail</h4>
+                             <p><?php echo $data['deskripsi_produk']; ?></p> 
                             <blockquote>
                                 <p><em><?php echo $data['deskripsi_produk']; ?></em>
                                 </p>

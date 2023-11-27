@@ -50,8 +50,8 @@ include 'koneksi.php';
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: #333;
-        color: #ccc;
+        background-color: #E0CCB9;
+        color: #fff;
         font-size: 12px;
         text-align: center;
         }
@@ -102,7 +102,7 @@ include 'koneksi.php';
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
                     <img src="logo2.png" class="hidden-xs">
-                    <img src="logo2.png" class="visible-xs"><span class="sr-only">E-Del - go to homepage</span>
+                    <img src="logo2.png" class="visible-xs"><span class="sr-only">Halu Coffee - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -203,10 +203,6 @@ include 'koneksi.php';
                                     <tr>
                                         <th colspan="5" class="text-right">Total Pembelian</th>
                                         <th>Rp.<?php echo number_format($data2['jumlah_pembelian']); ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="5" class="text-right">Ongkos Kirim</th>
-                                        <th>Rp.<?php echo number_format($data2['ongkir']); ?></th>
                                     </tr>
                                     <tr>
                                         <th colspan="5" class="text-right"><b>Total</b></th>

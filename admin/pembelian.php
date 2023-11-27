@@ -1,6 +1,18 @@
 <?php include 'protect.php'; ?>
-<h2>List Data Pesanan</h2>
 
+<div style="display: flex; justify-content: flex-start;">
+<h2>List Data Pesanan</h2>
+<div class="form-group col-md-2" style="margin-top: 13px; margin-left: 64%;"> 
+			<select class="form-control" id="sortSearch" style="background-color: bisque;">
+			
+			  <option value="">Filter</option>
+			  <option value="new">Hari Ini</option>
+			  <option value="asc">Minggan</option>
+			  <option value="desc">Bulanan</option>
+			  <option value="Processed">Tahunan</option>
+			</select>
+		</div>
+</div>
 <div class="table-responsive">
 	<table class="table table-bordered">
 		<thead>

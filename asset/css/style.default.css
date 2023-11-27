@@ -961,7 +961,7 @@ h1 {
   background-color: #4a7f45;
 }
 #copyright {
-  background: #333;
+  background: #E0CCB9;
   color: #ccc;
   padding: 20px 0;
   font-size: 12px;
@@ -1288,14 +1288,14 @@ h1 {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333333;
+  color: #333;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
  color: black;
-  background-color: rgb(223, 183, 132);
+  background-color: E0CCB9;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -1328,7 +1328,7 @@ h1 {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333333;
+    color: #333;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
@@ -1348,14 +1348,14 @@ h1 {
   color: #777777;
 }
 .navbar-default .navbar-link:hover {
-  color: #333333;
+  color: #333;
 }
 /* scaffolding */
 body {
   font-family: Poppins-Regular;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333333;
+  color: #333;
   background-color: #f0f0f0;
 }
 a {
