@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2023 at 04:23 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: Nov 27, 2023 at 10:11 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,38 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id_admin` int(11) NOT NULL,
-  `username` varchar(100) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
-  `nama_lengkap` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id_admin` int(255) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_lengkap`) VALUES
-(1, 'baskoroadi', '827ccb0eea8a706c4c34a16891f84e7b', 'Baskoro Adi'),
-(3, 'dea', '1234', 'dea anandita');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `likes`
---
-
-CREATE TABLE `likes` (
-  `id_likes` int(11) NOT NULL,
-  `id_pelanggan` int(11) NOT NULL,
-  `id_produk` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `likes`
---
-
-INSERT INTO `likes` (`id_likes`, `id_pelanggan`, `id_produk`) VALUES
-(21, 8, 1);
+INSERT INTO `admin` (`id_admin`, `nama`, `pass`) VALUES
+(1, 'dea', '456'),
+(2, 'dimas', '678');
 
 -- --------------------------------------------------------
 
@@ -78,25 +58,14 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `no_meja`) VALUES
-(4, '827ccb0eea8a706c4c34a16891f84e7b', 'Baskoro Adi Wicaksono'),
-(7, '123', 'pelanggan'),
-(8, '202cb962ac59075b964b07152d234b70', 'dea'),
-(9, 'pelanggan', '123'),
-(10, 'staff', '123'),
-(11, 'dea', '21'),
-(12, 'dimas', '1'),
-(13, 'dea', '9'),
-(14, 'dea', '1'),
-(15, 'dimas', '123'),
-(16, 'dea', '1'),
-(17, 'dea', '21'),
-(18, 'pelanggan', '123'),
-(19, 'staff', '123'),
-(20, 'bintang', '1'),
-(23, 'bintang', '1'),
-(24, 'bintang', '1'),
-(25, 'bintang', '1'),
-(26, 'bintang', '1');
+(8, 'dea', '23'),
+(33, 'dea', '3'),
+(34, 'dimas', '2'),
+(35, 'deaa', '12'),
+(36, 'deas', '3'),
+(37, 'q', '1'),
+(38, 'q', '1'),
+(39, 'a', '3');
 
 -- --------------------------------------------------------
 
@@ -162,18 +131,55 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`, `stok`, `foto_produk`, `deskripsi_produk`, `kategori`, `id_warung`) VALUES
-(1, 'Americano', 15000, 4, 'americano.jpg', '						Espresso + Air			', 'makanan', 1),
-(2, 'Caffe Latte', 18000, 2, 'CafeLatte.jpg', '			Bakso yang terbuat dari daging sapi berkualitas dan halal, dijamin sehat		', 'makanan', 2),
-(3, 'Cappucino', 18000, 10, 'Cappucino.jpg', '			Menggunakan daging segar yang sehat dan lezzat		', 'makanan', 3),
-(4, 'Moccacino', 18000, 0, 'Moccacino.jpg', 'Moccacino	', 'minuman', 3),
+(1, 'Americano', 15000, 4, 'americano.jpg', '						Espresso + Air			', 'Minuman', 1),
+(2, 'Caffe Latte', 18000, 2, 'CafeLatte.jpg', 'Latte art mantap		', 'Minuman', 1),
+(3, 'Cappucino', 18000, 10, 'Cappucino.jpg', 'Minuman mantap		', 'Minuman', 1),
+(4, 'Moccacino', 18000, 0, 'Moccacino.jpg', 'Moccacino	', 'minuman', 1),
 (5, 'Kopi Susu Aren', 15000, 14, 'KopiSusuGulaAren.jpg', 'Espresso + Susu + Gula Aren', '', 1),
 (6, 'Kopi Susu Halu', 18000, 16, 'KopiSusuHalu.jpg', 'Signature Kopi dari halu cofee', '', 1),
-(7, 'Tubruk', 10000, 0, 'Tubruk.jpg', 'Terbuat dari kopi pilihan', '', 2),
-(8, 'Red Valvet', 18000, 16, 'RedValvet.jpg', 'Red Valvet', '', 2),
-(9, 'Green Tea', 18000, 16, 'GreenTea.jpg', 'Macha', '', 3),
+(7, 'Tubruk', 10000, 0, 'Tubruk.jpg', 'Terbuat dari kopi pilihan', '', 1),
+(8, 'Red Valvet', 18000, 16, 'RedValvet.jpg', 'Red Valvet', '', 1),
+(9, 'Green Tea', 18000, 16, 'GreenTea.jpg', 'Macha', '', 2),
 (10, 'Chocolate', 18000, 16, 'Chocolate.jpg', 'Coklat', '', 1),
 (11, 'Lemon Tea', 13000, 16, 'LemonTea.jpg', 'Teh + Lemon', '', 2),
 (12, 'French Fries', 15000, 1, 'Frenchfries.jpg', 'Kentang Goreng Mantap		', '', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produk1`
+--
+
+CREATE TABLE `produk1` (
+  `id_produk` int(11) NOT NULL,
+  `nama_produk` varchar(100) DEFAULT NULL,
+  `harga_produk` int(11) DEFAULT NULL,
+  `stok` int(11) DEFAULT NULL,
+  `foto_produk` varchar(100) DEFAULT NULL,
+  `deskripsi_produk` text DEFAULT NULL,
+  `kategori` varchar(50) NOT NULL,
+  `id_warung` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `produk1`
+--
+
+INSERT INTO `produk1` (`id_produk`, `nama_produk`, `harga_produk`, `stok`, `foto_produk`, `deskripsi_produk`, `kategori`, `id_warung`) VALUES
+(1, 'Nasi Goreng', 15000, 4, '7.jpg', '						Nasi Goreng enak dengan campuran telor, sosis, baso, ayam				', 'makanan', 1),
+(2, 'Bakso', 10000, 2, '9.jpg', '			Bakso yang terbuat dari daging sapi berkualitas dan halal, dijamin sehat		', 'makanan', 2),
+(3, 'Ayam Goreng', 20000, 10, '6.jpg', '			Menggunakan daging segar yang sehat dan lezzat		', 'makanan', 3),
+(4, 'Es Teh', 5000, 0, '11.jpg', '			Teh segar pengobat dahaga		', 'minuman', 3),
+(5, 'Soto Ayam', 12000, 14, '5.jpg', 'Menu soto yang dicampur dengan ayam dan telor', '', 1),
+(6, 'Es Jeruk', 4000, 16, '12.jpg', 'Terbuat dari jeruk alami yang sehat dan manis', '', 1),
+(7, 'Kopi Jos', 6000, 0, '16.jpg', 'Terbuat dari kopi pilihan yaitu kopi kapal api', '', 2),
+(8, 'Martabak', 15000, 16, '10.jpg', 'Martabak telor dengan campuran daging dan kornet', '', 2),
+(9, 'Soup Buah', 15000, 16, '13.jpg', 'Es buah dengan campuran beraneka buah-buahan dan kuah sirup', '', 3),
+(10, 'Sate Ayam', 11000, 16, '1.jpg', 'Sate ayam lezat dengan bumbu kacang', '', 1),
+(11, 'Gado gado', 14000, 16, '2.jpg', 'Gado gado lengkap sayuran dan telor', '', 2),
+(16, 'roti', 16000, 5, 'Screenshot 2023-10-29 212235.png', 'roti sandwich', 'makanan', NULL),
+(17, 'kopi 1', 12000, 5, 'logo.png', 'adfsg', 'minuman', NULL),
+(18, 'kopi', 14000, 5, 'logo.png', 'asfgn', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -204,19 +210,17 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `role`) VALUES
 
 CREATE TABLE `warung` (
   `id_warung` int(11) NOT NULL,
-  `nama_warung` varchar(50) DEFAULT NULL,
-  `alamat_warung` varchar(100) NOT NULL,
-  `telepon_warung` varchar(15) NOT NULL
+  `nama_warung` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `warung`
 --
 
-INSERT INTO `warung` (`id_warung`, `nama_warung`, `alamat_warung`, `telepon_warung`) VALUES
-(1, 'Makanan', '', '081234567888'),
-(2, 'Mekdun', 'Gang PGA, Sukabirus, Dayeuhkolot, Bandung', '081234567990'),
-(3, 'Kantin Tiana', 'Sukapura, Dayeuhkolot, Bandung', '085324543166');
+INSERT INTO `warung` (`id_warung`, `nama_warung`) VALUES
+(1, 'Coffee'),
+(2, 'Tea'),
+(3, 'Snack');
 
 --
 -- Indexes for dumped tables
@@ -227,14 +231,6 @@ INSERT INTO `warung` (`id_warung`, `nama_warung`, `alamat_warung`, `telepon_waru
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
-
---
--- Indexes for table `likes`
---
-ALTER TABLE `likes`
-  ADD PRIMARY KEY (`id_likes`),
-  ADD KEY `id_pelanggan` (`id_pelanggan`),
-  ADD KEY `id_produk` (`id_produk`);
 
 --
 -- Indexes for table `pelanggan`
@@ -265,6 +261,13 @@ ALTER TABLE `produk`
   ADD KEY `id_warung` (`id_warung`);
 
 --
+-- Indexes for table `produk1`
+--
+ALTER TABLE `produk1`
+  ADD PRIMARY KEY (`id_produk`),
+  ADD KEY `id_warung` (`id_warung`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -284,25 +287,19 @@ ALTER TABLE `warung`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `likes`
---
-ALTER TABLE `likes`
-  MODIFY `id_likes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_admin` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_pelanggan` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `pembelian_produk`
@@ -314,7 +311,13 @@ ALTER TABLE `pembelian_produk`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `produk1`
+--
+ALTER TABLE `produk1`
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -333,13 +336,6 @@ ALTER TABLE `warung`
 --
 
 --
--- Constraints for table `likes`
---
-ALTER TABLE `likes`
-  ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`id_pelanggan`) REFERENCES `pelanggan` (`id_pelanggan`),
-  ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `pembelian`
 --
 ALTER TABLE `pembelian`
@@ -350,13 +346,19 @@ ALTER TABLE `pembelian`
 --
 ALTER TABLE `pembelian_produk`
   ADD CONSTRAINT `pembelian_produk_ibfk_1` FOREIGN KEY (`id_pembelian`) REFERENCES `pembelian` (`id_pembelian`),
-  ADD CONSTRAINT `pembelian_produk_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`);
+  ADD CONSTRAINT `pembelian_produk_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `produk1` (`id_produk`);
 
 --
 -- Constraints for table `produk`
 --
 ALTER TABLE `produk`
-  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_warung`) REFERENCES `warung` (`id_warung`);
+  ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_warung`) REFERENCES `halu2`.`warung` (`id_warung`);
+
+--
+-- Constraints for table `produk1`
+--
+ALTER TABLE `produk1`
+  ADD CONSTRAINT `produk1_ibfk_1` FOREIGN KEY (`id_warung`) REFERENCES `warung` (`id_warung`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
